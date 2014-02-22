@@ -4,14 +4,14 @@ organization := "com.github.sstone"
  
 version := "1.2-SNAPSHOT"
  
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.3"
 
 scalacOptions  ++= Seq("-feature", "-language:postfixOps")
  
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies <<= scalaVersion { scala_version => 
-    val akkaVersion   = "2.1.4"
+    val akkaVersion   = "2.2.3"
     Seq(
         "com.typesafe.akka"    %% "akka-actor"          % akkaVersion,
         "com.rabbitmq"         % "amqp-client"          % "3.1.1",

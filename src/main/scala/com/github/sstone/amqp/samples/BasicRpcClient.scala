@@ -25,7 +25,7 @@ object BasicRpcClient extends App {
 
   // send 1 request every second
   while(true) {
-    (client ? Request(Publish("amq.direct", "my_key", "test".getBytes("UTF-8")))).mapTo[RpcClient.Response].map(response => {
+    (client ? Request(Publish("amq.direct", "test", "test".getBytes("UTF-8")))).mapTo[RpcClient.Response].map(response => {
       // we expect 1 delivery
       val delivery = response.deliveries.head
       println("reponse : " + new String(delivery.body))
